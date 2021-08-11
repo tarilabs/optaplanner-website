@@ -9,26 +9,32 @@
     <#assign pom = data.get('pom.yml')>
     <h1>${content.title}</h1>
     <h2 id="FinalReleases">Final releases</h2>
-    <ul class="nav nav-tabs download-nav-tabs">
-        <li class="active">
-            <a data-toggle="pill" href="#engine">Engine</a>
+    <ul class="nav nav-pills" id="final-download-tab" role="tablist">
+        <li class="nav-item">
+            <button class="nav-link active" id="final-engine-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="final-engine" data-bs-target="#final-engine"
+                    aria-selected="true">Engine</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-employee-rostering">OptaWeb Employee Rostering</a>
+        <li class="nav-item">
+            <button class="nav-link" id="final-employee-rostering-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="final-employee-rostering" data-bs-target="#final-employee-rostering"
+                    aria-selected="fale">OptaWeb Employee Rostering</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-vehicle-routing">OptaWeb Vehicle Routing</a>
+        <li class="nav-item">
+            <button class="nav-link" id="final-vehicle-routing-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="final-vehicle-routing" data-bs-target="#final-vehicle-routing"
+                    aria-selected="false">OptaWeb Vehicle Routing</button>
         </li>
     </ul>
     <div class="tab-content download-tab-content">
-        <div class="tab-pane fade in active" id="engine">
+        <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="final-engine-tab" id="final-engine">
             <div class="sect2">
                 <h3>Distribution zip</h3>
                 <div class="paragraph">
                     <p>The OptaPlanner distribution zip includes binaries, documentation, examples and sources.</p>
                 </div>
                 <div class="ulist">
-                    <ul>
+                    <ul class="list-unstyled">
                         <li>
                             <p><span class="image"><img src="download.png" alt="Download"></span>
                                 <strong><a href="${pom.latestFinal.distributionZip}">Download OptaPlanner Engine ${pom.latestFinal.version}</a></strong></p>
@@ -89,9 +95,9 @@
                 </div>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-employee-rostering">
+        <div class="tab-pane fade" role="tabpanel" aria-labelledby="final-employee-rostering-tab" id="final-employee-rostering">
             <div class="ulist">
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.latestFinal.optawebEmployeeRosteringDistributionZip}">Download OptaWeb Employee Rostering ${pom.latestFinal.version}</a></strong></p>
                         <div class="ulist">
@@ -108,9 +114,9 @@
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing">
+        <div class="tab-pane fade" role="tabpanel" aria-labelledby="final-vehicle-routing-tab" id="final-vehicle-routing">
             <div class="ulist">
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.latestFinal.optawebVehicleRoutingDistributionZip}">Download OptaWeb Vehicle Routing ${pom.latestFinal.version}</a></strong></p>
                         <div class="ulist">
@@ -138,17 +144,19 @@
     <#if pom.latest.version == pom.latestFinal.version>
         <p><em>There is no Alpha or Beta yet because we just released a Final version.</em></p>
     <#else>
-        <ul class="nav nav-tabs download-nav-tabs">
-            <li class="active">
-                <a data-toggle="pill" href="#engine-latest">Engine</a>
+        <ul class="nav nav-pills" id="alpha-download-tab">
+            <li class="nav-item active">
+                <button class="nav-link active" id="alpha-engine-pill" data-ds-toggle="pill"
+                        data-bs-target="alpha-engine" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Engine</button>
             </li>
         </ul>
         <div class="tab-content download-tab-content">
-            <div class="tab-pane fade in active" id="engine-latest">
+            <div class="tab-pane fade show active" id="alpha-engine">
                 <div class="sect2">
                     <h3>Distribution zip</h3>
                     <div class="ulist">
-                        <ul>
+                        <ul class="list-unstyled">
                             <li>
                                 <p><span class="image"><img src="download.png" alt="Download"></span>
                                     <strong><a href="${pom.latest.distributionZip}">Download OptaPlanner Engine ${pom.latest.version}</a></strong></p>
@@ -192,39 +200,45 @@
     
     <h3 id="NightlySnapshots">Nightly snapshots</h3>
     <p>Nightly snapshots are unstable binaries, built automatically by our CI server.</p>
-    <ul class="nav nav-tabs download-nav-tabs">
-        <li class="active">
-            <a data-toggle="pill" href="#engine-nightly">Engine</a>
+    <ul class="nav nav-pills" id="nightly-download-tab">
+        <li class="nav-item">
+            <button class="nav-link active" id="nightly-engine-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="nightly-engine" data-bs-target="#nightly-engine"
+                    aria-selected="true">Engine</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-employee-rostering-nightly">OptaWeb Employee Rostering</a>
+        <li class="nav-item">
+            <button class="nav-link" id="nightly-employee-rostering-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="nightly-employee-rostering" data-bs-target="#nightly-employee-rostering"
+                    aria-selected="fale">OptaWeb Employee Rostering</button>
         </li>
-        <li>
-            <a data-toggle="pill" href="#optaweb-vehicle-routing-nightly">OptaWeb Vehicle Routing</a>
+        <li class="nav-item">
+            <button class="nav-link" id="nightly-vehicle-routing-tab" data-bs-toggle="pill" type="button" role="tab"
+                    aria-controls="nightly-vehicle-routing" data-bs-target="#nightly-vehicle-routing"
+                    aria-selected="false">OptaWeb Vehicle Routing</button>
         </li>
     </ul>
     <div class="tab-content download-tab-content">
-        <div class="tab-pane fade in active" id="engine-nightly">
+        <div class="tab-pane fade show active" id="nightly-engine">
             <div class="ulist">
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.distributionZip}">Download OptaPlanner Engine ${pom.nightly.version}</a></strong></p>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-employee-rostering-nightly">
+        <div class="tab-pane fade" id="nightly-optaweb-employee-rostering">
             <div class="ulist">
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.optawebEmployeeRosteringDistributionZip}">Download OptaWeb Employee Rostering ${pom.nightly.version}</a></strong></p>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="tab-pane fade" id="optaweb-vehicle-routing-nightly">
+        <div class="tab-pane fade" id="nightly-optaweb-vehicle-routing">
             <div class="ulist">
-                <ul>
+                <ul class="list-unstyled">
                     <li>
                         <p><span class="image"><img src="download.png" alt="Download"></span> <strong><a href="${pom.nightly.optawebVehicleRoutingDistributionZip}">Download OptaWeb Vehicle Routing ${pom.nightly.version}</a></strong></p>
                     </li>

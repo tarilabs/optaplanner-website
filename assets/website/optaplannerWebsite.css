@@ -303,11 +303,7 @@ td > p:last-child {
 }
 
 .download-tab-content {
-    border-width: 0px 1px 1px 1px;
-    border-style: solid;
-    border-color: #ddd;
-    border-radius: 0px 0px 4px 4px;
-    padding: 10px 10px 0px 10px;
+    padding: 1rem;
 }
 
 .logo.optaplanner {
