@@ -338,25 +338,30 @@ footer {
     padding: 3rem 0;
 }
 
-footer .row .column {
+footer .row .column,
+footer .r .column
+{
     text-align: left;
-    padding: 0;
+    padding: 0 0 0 1rem;
 }
 
 footer .row .column a,
+footer .r .column a,
+footer .r .column span,
 footer .row .column span {
     color: #ddd;
     display: inline-block;
     vertical-align: middle;
 }
 
+footer .r:nth-child(2) span,
 footer .row:nth-child(2) span {
     padding-top: 1rem;
     color: #777;
 }
 
-footer .row .column a.logo {
-    background: url(../../static/images/redHatLogo.png) no-repeat;
+footer a.logo {
+    background: url(images/redHatLogo.png) no-repeat;
     background-size: 144px 34px;
     height: 34px;
     top: auto;
