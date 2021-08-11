@@ -7,6 +7,16 @@
     --primary-nav-color: #f8f8f8;
 }
 
+header.header nav.navigation,
+header.header nav.navigation a {
+    font-size: 12pt;
+}
+
+header.header nav.navigation h1,
+header.header nav.navigation h1 a {
+    font-size: 18pt;
+}
+
 .navigation--primary,
 footer nav .row {
     padding: 0;
