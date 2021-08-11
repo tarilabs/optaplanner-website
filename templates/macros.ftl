@@ -124,7 +124,8 @@
                     <li style="margin-bottom: 10px;">
                         <div class="title">
                             <a href="https://youtu.be/${video.youtubeId}">
-                                <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
+                                <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT"
+                                     style="height:16px; width:auto;"/>
                                 ${video.title}
                             </a>
                         </div>
@@ -157,22 +158,28 @@
     <div class="userBadge">
         <div class="well well-sm" style="padding: 5px; width: ${long?then("600px", "320px")};">
             <div class="media">
-                <img class="img-rounded pull-left" src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=50&d=mm" style="width: 50px;" alt="Avatar ${user.fullName}"/>
+                <img class="img-rounded pull-left"
+                     src="https://www.gravatar.com/avatar/${user.gravatarHashId}?s=50&d=mm" style="width: 50px;"
+                     alt="Avatar ${user.fullName}"/>
                 <div class="media-body">
                     <h4 class="media-heading">${user.fullName}</h4>
                     <hr style="margin:2px auto; border-color: #ddd;"/>
                     <span class="pull-right">
                         <#if user.twitterUsername??>
-                            <a href="https://twitter.com/${user.twitterUsername}"><img src="${content.rootpath}headerFooter/twitterLogo.png" alt="Twitter"/></a>
+                            <a href="https://twitter.com/${user.twitterUsername}"><img
+                                        src="${content.rootpath}headerFooter/twitterLogo.png" alt="Twitter"/></a>
                         </#if>
                         <#if user.facebookUsername??>
-                            <a href="https://www.facebook.com/${user.facebookUsername}"><img src="${content.rootpath}headerFooter/facebookLogo.png" alt="Facebook"/></a>
+                            <a href="https://www.facebook.com/${user.facebookUsername}"><img
+                                        src="${content.rootpath}headerFooter/facebookLogo.png" alt="Facebook"/></a>
                         </#if>
                         <#if user.linkedInId??>
-                            <a href="https://www.linkedin.com/in/${user.linkedInId}"><img src="${content.rootpath}headerFooter/linkedInLogo.png" alt="LinkedIn"/></a>
+                            <a href="https://www.linkedin.com/in/${user.linkedInId}"><img
+                                        src="${content.rootpath}headerFooter/linkedInLogo.png" alt="LinkedIn"/></a>
                         </#if>
                         <#if user.githubUsername??>
-                            <a href="https://github.com/${user.githubUsername}"><img src="${content.rootpath}headerFooter/gitHubLogo.png" alt="GitHub"/></a>
+                            <a href="https://github.com/${user.githubUsername}"><img
+                                        src="${content.rootpath}headerFooter/gitHubLogo.png" alt="GitHub"/></a>
                         </#if>
                     </span>
                     <p class="small">${user.role}</p>
@@ -214,14 +221,16 @@
     <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
-        <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
+    <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
         <ul class="list-unstyled">
             <#list relatedVideos as video>
                 <li style="margin-bottom: 20px;">
                     <a href="https://youtu.be/${video.youtubeId}">
-                        <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180" alt="Video screenshot">
+                        <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180"
+                             alt="Video screenshot">
                         <div class="title">
-                            <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT" style="height:16px; width:auto;"/>
+                            <img src="${content.rootpath}headerFooter/youtubeLogo.png" alt="YT"
+                                 style="height:16px; width:auto;"/>
                             ${video.title}
                         </div>
                     </a>
@@ -255,22 +264,25 @@
 </#macro>
 
 <#macro downloadJumbotron>
-    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
-        <div class="text-center" style="margin-bottom: 10px;"><a class="btn btn-lg btn-success versionedButton" href="${pom.latestFinal.distributionZip}"><img alt="Download" src="${content.rootpath}download/download.png">
-            <div>
-                <span>Try OptaPlanner</span><br/>
-                <span class="small">Download ${pom.latestFinal.version}</span>
-            </div>
-        </a></div>
-        <ol>
-            <li>Download the zip and unzip it.</li>
-            <li>
-                Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
-                Or run <code>examples/runExamples.bat</code> (Windows).
-            </li>
-        </ol>
-        <div class="text-center">
-            <div class="small">
+    <div>
+        <div>
+            <a class="btn btn-lg btn-success w-100" href="${pom.latestFinal.distributionZip}">
+                <img alt="Download" src="${content.rootpath}download/download.png">
+                <div>
+                    <span>Try OptaPlanner</span><br/>
+                    <span class="small">Download ${pom.latestFinal.version}</span>
+                </div>
+            </a>
+        </div>
+        <div class="card-body">
+            <ol>
+                <li>Download the zip and unzip it.</li>
+                <li>
+                    Run <code>examples/runExamples.sh</code> (Linux/macOS).<br/>
+                    Or run <code>examples/runExamples.bat</code> (Windows).
+                </li>
+            </ol>
+            <div class="text-center small">
                 Requires <a href="https://adoptopenjdk.net">Java™</a> to run.
             </div>
         </div>
@@ -278,14 +290,17 @@
 </#macro>
 
 <#macro documentationJumbotron>
-    <div class="jumbotron" style="padding: 10px; margin-bottom: 20px;">
-        <div class="text-center" style="margin-bottom: 10px;"><a class="btn btn-lg btn-primary versionedButton" href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart"><img alt="Documentation" src="${content.rootpath}learn/documentation.png">
-            <div>
-                <span>Get started</span><br/>
-                <span class="small">User guide ${pom.latestFinal.version}</span>
-            </div>
-        </a></div>
+    <div>
         <div class="text-center">
+            <a class="btn btn-lg btn-primary w-100"
+               href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart">
+                <img alt="Documentation" src="${content.rootpath}learn/documentation.png">
+                <div>
+                    <span>Get started</span><br/>
+                    <span class="small">User guide ${pom.latestFinal.version}</span>
+                </div>
+            </a></div>
+        <div class="card-body">
             <a href="https://github.com/kiegroup/optaplanner-quickstarts">
                 <img alt="GitHub" src="${content.rootpath}headerFooter/gitHubLogo.png">
                 <span>Clone the Quickstarts code.</span>
@@ -319,7 +334,7 @@
         to solve optimization problems efficiently.
         It is also compatible with other JVM languages (such as
         <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a>
-        and  <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
+        and <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
         Constraints apply on plain domain objects and can call existing code.
         There's no need to input constraints as mathematical equations.
         Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
@@ -327,62 +342,64 @@
         with very efficient score calculation and other state-of-the-art constraint solving techniques.
     </p>
     <p>
-        OptaPlanner is <b>open source software</b>, released under <a href="${content.rootpath}code/license.html">the Apache License</a>.
+        OptaPlanner is <b>open source software</b>, released under <a href="${content.rootpath}code/license.html">the
+            Apache License</a>.
         It is written in 100% pure Java™, runs on any JVM and is available in
         <a href="${content.rootpath}download/download.html">the Maven Central repository</a> too.
         It works with <a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a>
-        and  <a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a>.
+        and <a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a>.
     </p>
 </#macro>
 
 <#macro productToProjectVersionMapping>
-<div class="card no-border">
-    <div class="card-heading">Note for Red Hat Decision Manager customers</div>
-    <div class="card-body">
-        <p>
-            The RHDM version differs from the OptaPlanner version:
-        </p>
-        <table class="tableblock frame-all grid-all spread">
-            <colgroup>
-                <col style="width: 50%;">
-                <col style="width: 50%;">
-            </colgroup>
-            <thead>
-            <tr>
-                <th>RHDM version</th>
-                <th>OptaPlanner version</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>7.7</td>
-                <td>7.33</td>
-            </tr>
-            <tr>
-                <td>7.8</td>
-                <td>7.39</td>
-            </tr>
-            <tr>
-                <td>7.9</td>
-                <td>7.44</td>
-            </tr>
-            <tr>
-                <td>7.10</td>
-                <td>7.48</td>
-            </tr>
-            <tr>
-                <td>7.11</td>
-                <td>8.5 (and 7.52)</td>
-            </tr>
-            </tbody>
-        </table>
+    <div class="card no-border">
+        <div class="card-heading">Note for Red Hat Decision Manager customers</div>
+        <div class="card-body">
+            <p>
+                The RHDM version differs from the OptaPlanner version:
+            </p>
+            <table class="tableblock frame-all grid-all spread">
+                <colgroup>
+                    <col style="width: 50%;">
+                    <col style="width: 50%;">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>RHDM version</th>
+                    <th>OptaPlanner version</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>7.7</td>
+                    <td>7.33</td>
+                </tr>
+                <tr>
+                    <td>7.8</td>
+                    <td>7.39</td>
+                </tr>
+                <tr>
+                    <td>7.9</td>
+                    <td>7.44</td>
+                </tr>
+                <tr>
+                    <td>7.10</td>
+                    <td>7.48</td>
+                </tr>
+                <tr>
+                    <td>7.11</td>
+                    <td>8.5 (and 7.52)</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-</div>
 </#macro>
 
 <#macro flags>
     <div style="text-align: right; padding-right: 10px; margin-bottom: 20px;">
-        <a href="${content.rootpath}index.html" style="text-decoration: none;"><img src="${content.rootpath}website/flags/us.png"><img src="${content.rootpath}website/flags/gb.png">
+        <a href="${content.rootpath}index.html" style="text-decoration: none;"><img
+                    src="${content.rootpath}website/flags/us.png"><img src="${content.rootpath}website/flags/gb.png">
         </a>
         -
         <a href="${content.rootpath}localized/fr/index.html" style="text-decoration: none;">

@@ -10,52 +10,48 @@
             uri=""
             googleWebmasterToolsVerification=true>
         <div class="row">
-            <div class="col-md-7">
-                <div style="margin-bottom: 10px">
-                    <h1>What is OptaPlanner?</h1>
-                    <div class="paragraph">
-                        <p>OptaPlanner is <strong>an AI constraint solver.</strong>
-                            It optimizes planning and scheduling problems,
-                            such as <a href="${content.rootpath}learn/useCases/vehicleRoutingProblem.html">the Vehicle Routing Problem</a>,
-                            <a href="${content.rootpath}learn/useCases/employeeRostering.html">Employee Rostering</a>,
-                            <a href="${content.rootpath}learn/useCases/maintenanceScheduling.html">Maintenance Scheduling</a>,
-                            <a href="${content.rootpath}learn/useCases/taskAssignmentOptimization.html">Task Assignment</a>,
-                            <a href="${content.rootpath}learn/useCases/schoolTimetabling.html">School Timetabling</a>,
-                            <a href="${content.rootpath}learn/useCases/cloudOptimization.html">Cloud Optimization</a>,
-                            <a href="${content.rootpath}learn/useCases/conferenceScheduling.html">Conference Scheduling</a>,
-                            Job Shop Scheduling, Bin Packing
-                            and <a href="${content.rootpath}learn/useCases/">many more</a>.
-                            Every organization faces such challenges:
-                            assign a limited set of <em>constrained</em> resources (employees, assets, time and/or money)
-                            to provide products or services.
-                            OptaPlanner delivers more efficient plans, which reduce costs and improve service quality.</p>
-                    </div>
-                    <div class="paragraph">
-                        <p>OptaPlanner is <strong>a lightweight, embeddable planning engine</strong>.
-                            It enables everyday <a href="${content.rootpath}compatibility/java.html">Java</a> programmers to solve optimization problems efficiently.
-                            It is also compatible with other JVM languages (such as <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a> and <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
-                            Constraints apply on plain domain objects and can call existing code.
-                            There&#8217;s no need to input constraints as mathematical equations.
-                            Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
-                            (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
-                            with very efficient score calculation and other state-of-the-art constraint solving techniques.</p>
-                    </div>
-                    <div class="paragraph">
-                        <p>OptaPlanner is <strong>open source software</strong>, released under <a href="${content.rootpath}code/license.html">the Apache License</a>.
-                            It is written in 100% pure Java™, runs on any JVM and is available in <a href="${content.rootpath}download/download.html">the Maven Central repository</a> too.
-                            It works with <a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a> and <a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a>.</p>
-                    </div>
+            <div class="col-md-8 col-sm-5">
+                <h1>What is OptaPlanner?</h1>
+                <div class="paragraph">
+                    <p>OptaPlanner is <strong>an AI constraint solver.</strong>
+                        It optimizes planning and scheduling problems,
+                        such as <a href="${content.rootpath}learn/useCases/vehicleRoutingProblem.html">the Vehicle Routing Problem</a>,
+                        <a href="${content.rootpath}learn/useCases/employeeRostering.html">Employee Rostering</a>,
+                        <a href="${content.rootpath}learn/useCases/maintenanceScheduling.html">Maintenance Scheduling</a>,
+                        <a href="${content.rootpath}learn/useCases/taskAssignmentOptimization.html">Task Assignment</a>,
+                        <a href="${content.rootpath}learn/useCases/schoolTimetabling.html">School Timetabling</a>,
+                        <a href="${content.rootpath}learn/useCases/cloudOptimization.html">Cloud Optimization</a>,
+                        <a href="${content.rootpath}learn/useCases/conferenceScheduling.html">Conference Scheduling</a>,
+                        Job Shop Scheduling, Bin Packing
+                        and <a href="${content.rootpath}learn/useCases/">many more</a>.
+                        Every organization faces such challenges:
+                        assign a limited set of <em>constrained</em> resources (employees, assets, time and/or money)
+                        to provide products or services.
+                        OptaPlanner delivers more efficient plans, which reduce costs and improve service quality.</p>
+                </div>
+                <div class="paragraph">
+                    <p>OptaPlanner is <strong>a lightweight, embeddable planning engine</strong>.
+                        It enables everyday <a href="${content.rootpath}compatibility/java.html">Java</a> programmers to solve optimization problems efficiently.
+                        It is also compatible with other JVM languages (such as <a href="${content.rootpath}compatibility/kotlin.html">Kotlin</a> and <a href="${content.rootpath}compatibility/scala.html">Scala</a>).
+                        Constraints apply on plain domain objects and can call existing code.
+                        There&#8217;s no need to input constraints as mathematical equations.
+                        Under the hood, OptaPlanner combines sophisticated Artificial Intelligence optimization algorithms
+                        (such as Tabu Search, Simulated Annealing, Late Acceptance and other metaheuristics)
+                        with very efficient score calculation and other state-of-the-art constraint solving techniques.</p>
+                </div>
+                <div class="paragraph">
+                    <p>OptaPlanner is <strong>open source software</strong>, released under <a href="${content.rootpath}code/license.html">the Apache License</a>.
+                        It is written in 100% pure Java™, runs on any JVM and is available in <a href="${content.rootpath}download/download.html">the Maven Central repository</a> too.
+                        It works with <a href="${content.rootpath}compatibility/quarkus.html">Quarkus</a> and <a href="${content.rootpath}compatibility/springBoot.html">Spring Boot</a>.</p>
                 </div>
                 <@macros.flags/>
             </div>
-            <div class="col-md-5">
-                <div style="margin-top: 10px;">
-                    <@macros.downloadJumbotron/>
-                    <@macros.documentationJumbotron/>
-                </div>
+            <div class="col-md-4 col-sm-5">
+                <@macros.downloadJumbotron/>
+                <@macros.documentationJumbotron/>
             </div>
         </div>
-        <div class="jumbotron pagination-centered" style="padding: 10px; margin-bottom: 20px;">
+        <div class="jumbotron pagination-centered">
             <ul class="nav nav-justified frontPageCarouselButtons" id="whatIsCarouselButtons">
                 <li class="active" data-slide-to="0" data-target="#whatIsCarousel">
                     <a data-toggle="tab" href="#">Video</a>
