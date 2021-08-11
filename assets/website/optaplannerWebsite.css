@@ -348,3 +348,7 @@ td > p:last-child {
     border-radius: 0px 0px 4px 4px;
     padding: 10px 10px 0px 10px;
 }
+
+.logo.optaplanner {
+    background-image: url("images/optaplanner_icon.svg") !important;
+}
