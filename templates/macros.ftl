@@ -5,7 +5,7 @@
 
 <#macro latestReleases>
     <div class="card no-border">
-        <div class="card-heading">Latest release</div>
+        <h1 class="card-title">Latest release</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <li style="margin-bottom: 10px;">
@@ -35,7 +35,7 @@
 
 <#macro servicesOffer>
     <div class="card no-border">
-        <div class="card-heading">Paid support and consulting</div>
+        <h1 class="card-title">Paid support and consulting</h1>
         <div class="card-body">
             <p>
                 <b>Want to talk to the experts?</b>
@@ -48,7 +48,7 @@
 
 <#macro latestEvents>
     <div class="card no-border">
-        <div class="card-heading">Upcoming events</div>
+        <h1 class="card-title">Upcoming events</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <#list events as event>
@@ -95,10 +95,10 @@
 
 <#macro latestBlogPosts>
     <div class="card no-border">
-        <div class="card-heading">Latest blog posts</div>
+        <h1 class="card-title">Latest blog posts</h1>
         <div class="card-body">
             <ul class="list-unstyled">
-                <#list published_posts[0..6] as blog>
+                <#list published_posts[0..2] as blog>
                     <li style="margin-bottom: 10px;">
                         <div class="title">
                             <a href="${content.rootpath}${blog.uri}">${blog.title}</a>
@@ -117,10 +117,10 @@
 
 <#macro latestVideos>
     <div class="card no-border">
-        <div class="card-heading">Latest videos</div>
+        <h1 class="card-title">Latest videos</h1>
         <div class="card-body">
             <ul class="list-unstyled">
-                <#list videos[0..6] as video>
+                <#list videos[0..2] as video>
                     <li style="margin-bottom: 10px;">
                         <div class="title">
                             <a href="https://youtu.be/${video.youtubeId}">
