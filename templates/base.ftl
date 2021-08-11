@@ -56,7 +56,7 @@
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
     <#include "shared/menu.ftl">
     <div class="body-without-header-footer">
-        <div class="container" style="padding-top: 20px;">
+        <div class="container">
         <#nested>
         </div>
     </div>
