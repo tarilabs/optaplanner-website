@@ -352,3 +352,7 @@ td > p:last-child {
 .logo.optaplanner {
     background-image: url("images/optaplanner_icon.svg") !important;
 }
+
+.no-border {
+    border: unset !important;
+}

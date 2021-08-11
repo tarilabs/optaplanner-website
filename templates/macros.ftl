@@ -4,9 +4,9 @@
 <#assign users = data.get('users.yml').data>
 
 <#macro latestReleases>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest release</div>
-        <div class="panel-body">
+    <div class="card no-border">
+        <div class="card-heading">Latest release</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <li style="margin-bottom: 10px;">
                     <div class="title">
@@ -34,9 +34,9 @@
 </#macro>
 
 <#macro servicesOffer>
-    <div class="panel panel-primary">
-        <div class="panel-heading">Paid support and consulting</div>
-        <div class="panel-body">
+    <div class="card no-border">
+        <div class="card-heading">Paid support and consulting</div>
+        <div class="card-body">
             <p>
                 <b>Want to talk to the experts?</b>
                 Red Hat offers certified binaries with enterprise consulting.
@@ -47,9 +47,9 @@
 </#macro>
 
 <#macro latestEvents>
-    <div class="panel panel-default">
-        <div class="panel-heading">Upcoming events</div>
-        <div class="panel-body">
+    <div class="card no-border">
+        <div class="card-heading">Upcoming events</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list events as event>
                     <#if .now?date <= event.date?date>
@@ -94,9 +94,9 @@
 </#macro>
 
 <#macro latestBlogPosts>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest blog posts</div>
-        <div class="panel-body">
+    <div class="card no-border">
+        <div class="card-heading">Latest blog posts</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list published_posts[0..6] as blog>
                     <li style="margin-bottom: 10px;">
@@ -116,9 +116,9 @@
 </#macro>
 
 <#macro latestVideos>
-    <div class="panel panel-default">
-        <div class="panel-heading">Latest videos</div>
-        <div class="panel-body">
+    <div class="card no-border">
+        <div class="card-heading">Latest videos</div>
+        <div class="card-body">
             <ul class="list-unstyled">
                 <#list videos[0..6] as video>
                     <li style="margin-bottom: 10px;">
@@ -336,9 +336,9 @@
 </#macro>
 
 <#macro productToProjectVersionMapping>
-<div class="panel panel-default">
-    <div class="panel-heading">Note for Red Hat Decision Manager customers</div>
-    <div class="panel-body">
+<div class="card no-border">
+    <div class="card-heading">Note for Red Hat Decision Manager customers</div>
+    <div class="card-body">
         <p>
             The RHDM version differs from the OptaPlanner version:
         </p>
