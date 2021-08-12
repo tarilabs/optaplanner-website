@@ -5,27 +5,33 @@
 
 <#macro latestReleases>
     <div class="card no-border">
-        <h1 class="card-title">Latest release</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <li style="margin-bottom: 10px;">
                     <div class="title">
-                        <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
-                            ${pom.latestFinal.version} released
+                        <a class="btn btn-lg btn-success w-100"
+                           href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
+                            <img alt="Download" src="/download/download.png">
+                            <div>
+                                <span>Try OptaPlanner</span><br>
+                                <span class="small">${pom.latestFinal.version}</span>
+                            </div>
                         </a>
-                    </div>
-                    <div class="small">
-                        ${pom.latestFinal.releaseDate?string("EEE d MMMM yyyy")}
                     </div>
                 </li>
                 <#if pom.latest.version != pom.latestFinal.version>
                     <div class="title">
-                        <a href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">
-                            ${pom.latest.version} released
+                        <a class="btn btn-lg btn-success w-100"
+                           href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">
+                            <img alt="Download" src="/download/download.png">
+                            <div>
+                                <span>Try OptaPlanner</span><br>
+                                <span class="small">${pom.latest.version}</span>
+                            </div>
+                            <div class="small">
+                                ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}
+                            </div>
                         </a>
-                    </div>
-                    <div class="small">
-                        ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}
                     </div>
                 </#if>
             </ul>
@@ -35,7 +41,6 @@
 
 <#macro servicesOffer>
     <div class="card no-border">
-        <h1 class="card-title">Paid support and consulting</h1>
         <div class="card-body">
             <p>
                 <b>Want to talk to the experts?</b>
