@@ -8,17 +8,18 @@
         <div class="row">
             <div class="col-md-9">
                 <#nested>
-                <div class="col-md-6">
-                    <@macros.relatedVideos/>
-                </div>
-                <div class="col-md-6">
-                    <@macros.relatedBlogPosts/>
+                <div class="row">
+                    <div class="col-md-6">
+                        <@macros.relatedVideos/>
+                    </div>
+                    <div class="col-md-6">
+                        <@macros.relatedBlogPosts/>
+                    </div>
                 </div>
             </div>
             <div class="col-md-3">
-                <@macros.downloadJumbotron/>
-                <@macros.documentationJumbotron/>
                 <@macros.latestReleases/>
+                <@macros.documentationJumbotron/>
                 <@macros.servicesOffer/>
                 <@macros.latestEvents/>
                 <@macros.latestBlogPosts/>

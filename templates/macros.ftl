@@ -6,35 +6,29 @@
 <#macro latestReleases>
     <div class="card no-border">
         <div class="card-body">
-            <ul class="list-unstyled">
-                <li style="margin-bottom: 10px;">
-                    <div class="title">
-                        <a class="btn btn-lg btn-success w-100"
-                           href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latestFinal.releaseNotesVersion}.html">
-                            <img alt="Download" src="/download/download.png">
-                            <div>
-                                <span>Try OptaPlanner</span><br>
-                                <span class="small">${pom.latestFinal.version}</span>
-                            </div>
-                        </a>
+            <#if pom.latest.version == pom.latestFinal.version>
+                <a class="btn btn-lg btn-success w-100"
+                   href="${pom.latestFinal.distributionZip}">
+                    <img alt="Download" src="/download/download.png">
+                    <div>
+                        <span>Try OptaPlanner</span><br>
+                        <span class="small">${pom.latestFinal.version}</span>
                     </div>
-                </li>
-                <#if pom.latest.version != pom.latestFinal.version>
-                    <div class="title">
-                        <a class="btn btn-lg btn-success w-100"
-                           href="${content.rootpath}download/releaseNotes/releaseNotes${pom.latest.releaseNotesVersion}.html">
-                            <img alt="Download" src="/download/download.png">
-                            <div>
-                                <span>Try OptaPlanner</span><br>
-                                <span class="small">${pom.latest.version}</span>
-                            </div>
-                            <div class="small">
-                                ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}
-                            </div>
-                        </a>
+                </a>
+            </#if>
+            <#if pom.latest.version != pom.latestFinal.version>
+                <a class="btn btn-lg btn-success w-100"
+                   href="${pom.latest.distributionZip}">
+                    <img alt="Download" src="/download/download.png">
+                    <div>
+                        <span>Try OptaPlanner</span><br>
+                        <span class="small">${pom.latest.version}</span>
                     </div>
-                </#if>
-            </ul>
+                    <div class="small">
+                        ${pom.latest.releaseDate?string("EEE d MMMM yyyy")}
+                    </div>
+                </a>
+            </#if>
         </div>
     </div>
 </#macro>
@@ -53,7 +47,7 @@
 
 <#macro latestEvents>
     <div class="card no-border">
-        <h1 class="card-title">Upcoming events</h1>
+        <h1 class="card-title">Events</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <#list events as event>
@@ -100,7 +94,7 @@
 
 <#macro latestBlogPosts>
     <div class="card no-border">
-        <h1 class="card-title">Latest blog posts</h1>
+        <h1 class="card-title">Blog Posts</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <#list published_posts[0..2] as blog>
@@ -122,7 +116,7 @@
 
 <#macro latestVideos>
     <div class="card no-border">
-        <h1 class="card-title">Latest videos</h1>
+        <h1 class="card-title">Videos</h1>
         <div class="card-body">
             <ul class="list-unstyled">
                 <#list videos[0..2] as video>
@@ -226,10 +220,9 @@
     <#assign relatedVideos = videos?filter(video -> video.tags?? &amp;&amp; video.tags.contains(content.related_tag))>
     <#if relatedVideos?size &gt; 0>
         <h2>Related videos</h2>
-    <#-- TODO use card layout after upgrade to Twitter bootstrap 5 and make it prettier (whitespace etc) -->
-        <ul class="list-unstyled">
-            <#list relatedVideos as video>
-                <li style="margin-bottom: 20px;">
+        <#list relatedVideos as video>
+            <div class="card no-border">
+                <div class="card-body">
                     <a href="https://youtu.be/${video.youtubeId}">
                         <img src="https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg" width="320" height="180"
                              alt="Video screenshot">
@@ -243,9 +236,9 @@
                         <@userBadgeInline userId=video.author/>
                     </#if>
                     <div class="small">${video.date?string("EEE d MMMM yyyy")}</div>
-                </li>
-            </#list>
-        </ul>
+                </div>
+            </div>
+        </#list>
     </#if>
 </#macro>
 
@@ -295,20 +288,24 @@
 </#macro>
 
 <#macro documentationJumbotron>
-    <div>
-        <div class="text-center">
-            <a class="btn btn-lg btn-primary w-100"
+    <div class="card no-border">
+        <div class="card-body">
+            <a class="btn btn-lg btn-light w-100"
                href="${pom.latestFinal.engineDocumentationHtmlSingle}#quickStart">
                 <img alt="Documentation" src="${content.rootpath}learn/documentation.png">
                 <div>
                     <span>Get started</span><br/>
                     <span class="small">User guide ${pom.latestFinal.version}</span>
                 </div>
-            </a></div>
+            </a>
+        </div>
+    </div>
+    <div class="card no-border">
         <div class="card-body">
-            <a href="https://github.com/kiegroup/optaplanner-quickstarts">
+            <a class="btn btn-lg btn-light w-100"
+               href="https://github.com/kiegroup/optaplanner-quickstarts">
                 <img alt="GitHub" src="${content.rootpath}headerFooter/gitHubLogo.png">
-                <span>Clone the Quickstarts code.</span>
+                <div>Clone the Quickstarts code.</div>
             </a>
         </div>
     </div>
